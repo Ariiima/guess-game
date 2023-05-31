@@ -1,30 +1,53 @@
 body{
-    background-color: #e2e1e0;
-    font-family:Volkhov;
+    background: #4CB8C4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3CD3AD, #4CB8C4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #3CD3AD, #4CB8C4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
 }
 .blocks{
-    background-color: white;
+    background-color: #f4f3f3;
     height: auto;
     min-height: 200px;
     height: 350px;
-    /*width: 700px;*/
+    width: 30%;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 18.5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            margin: 18.5px;
+    border-radius: 12px;
 }
 
 #mainpanel{
     padding: 60px;
     background-color: #FF6766 ;
 }
-
-.btn{
-    margin-top: 10px;
-    border-radius: 0px;
-    font-size: 25px;
+.btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  top: 10px;
+  z-index: 1;
+  outline: none;
 }
-.btn:focus{
-    outline: none;
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #302e2e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
 }
 #gno{
     border-radius: 50px;
@@ -79,9 +102,8 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-
 input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
@@ -120,6 +142,11 @@ input:checked + .slider:before {
     position: absolute;
     opacity: 0;
     cursor: pointer;
+}
+
+.row {
+    justify-content: center;
+    display: flex;
 }
 
 /* Create a custom radio button */

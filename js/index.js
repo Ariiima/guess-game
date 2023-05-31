@@ -25,7 +25,7 @@ $(document).ready(function () {
     cbox.change(function () {
         ischecked = cbox.is(":checked");
         if(!ischecked) {
-            hintpanel.css("background-color", "black");
+            hintpanel.css("background-color", "#ccc");
             $('#tsfd').show();
         }
         else {
@@ -81,7 +81,7 @@ $(document).ready(function () {
         let gval = input.val();
   		/*console.log(count);
   		console.log(nog);*/
-
+        $('#title').css('justify-content','left');
         if(String(gval)!=''&&count<10&&end==false) {
         	$('.hbox').hide();
         $('#diffchoose').hide();
@@ -151,6 +151,7 @@ $(document).ready(function () {
             $("#myModal2").modal();
         }
             $('.gcontent').append('<h4>'+gval+'('+msg+')'+'<h4>');
+            $('h4').css('transition','all 0.5s ease-in-out');
             if(ischecked){
                 switch(nog){
                     case 10:
